@@ -52,8 +52,6 @@ body {
   background-image: url('../public/layered-waves.svg');
   background-size: cover;
   background-position: bottom center, 50%, 50%;
-
-
 }
 
 #root {
@@ -61,4 +59,8 @@ body {
   display: flex;
   flex-direction: column;
 
+}
+
+#overlay-root, #backdrop-root{
+  margin:0;
 }
