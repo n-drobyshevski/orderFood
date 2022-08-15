@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./components/Header/Header";
+import About from "./components/About/About"
 import ItemsList from './components/Items/ItemsList'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   return (
   <React.Fragment>
     <Header />
+    <About />
     <ItemsList items={testData}/>
   </React.Fragment>    
   );
