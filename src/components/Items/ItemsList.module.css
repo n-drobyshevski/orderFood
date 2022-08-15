@@ -1,0 +1,9 @@
+ul{
+    list-style: none;
+    padding: 1.5rem 1rem;
+}
+
+.itemsList{
+    width: 90%;
+    margin: 2rem auto;
+}
