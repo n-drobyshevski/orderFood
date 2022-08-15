@@ -1,11 +1,15 @@
-import './Item.module.css';
+import AddToCartForm from './AddToCartForm';
+import styles from './Item.module.css';
 
 const Item = (props) => {
     return (
         <li>
-            <h3>{props.name}</h3>
-            <p>{props.desc}</p>
-            <h2>{props.prix}</h2>
+            <div className={styles.mainContent}>
+                <h3>{props.name}</h3>
+                <p><i>{props.desc}</i></p>
+                <h4 className={styles.price} >{props.price}</h4>
+            </div>
+            <AddToCartForm />
         </li>
     )
 };
