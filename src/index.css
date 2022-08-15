@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*+* {
+  margin-top: 1.5rem;
 }
 
 html {
@@ -9,7 +17,15 @@ html {
 }
 
 body {
+  height: 100vh;
+  color:white;
+  line-height: 1.5;
   margin: 0;
-  background-color: #3f3f3f;
-}
+  padding: 0 10%;
+  /* background-color: #594F56; */
+  background-image: url('../public/layered-waves.svg');
+  background-size: cover;
+  background-position: bottom center, 50%, 50%;
+  overflow: hidden;
 
+}
