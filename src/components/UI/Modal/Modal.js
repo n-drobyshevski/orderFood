@@ -17,7 +17,7 @@ const Modal = (props) => {
 
             {ReactDOM.createPortal(<Backdrop />, document.getElementById('backdrop-root'))}
             {ReactDOM.createPortal(
-                <Card className={styles.modal}>
+                <Card className={`${styles.modal} ${props.className}` }>
                     <header>
                         <h3>
                             {props.title}

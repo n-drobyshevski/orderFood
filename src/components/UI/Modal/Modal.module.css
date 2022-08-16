@@ -12,8 +12,8 @@
 .modal {
   position: fixed;
   width: 50vw;
-  height: 40vh;
-  margin: 30vh 25vw;
+  min-height: 30vh;
+  margin: 20vh 25vw;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,8 @@
 }
 
 .modal main {
-  padding: 1.5rem 1.7rem;
+  overflow-y: scroll;
+  margin:0;
   flex-grow: 1;
   border-bottom: 1px solid #666;
 }
