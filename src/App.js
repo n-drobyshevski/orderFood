@@ -14,6 +14,8 @@ function App() {
 
   const [cartOpened, setCartOpened] = useState(false);
 
+  const [cartContent, setCartContent] = useState([]);
+
   const closeCartHandler = () => {
     setCartOpened(false);
   };
@@ -21,13 +23,31 @@ function App() {
   const openCartHandler = () => {
     setCartOpened(true);
   };
+  const addToCartHandler = (itemData) => {
+
+    let item = {};
+    for (const elem of testData) {
+      if (elem.id === itemData.id) {
+        item = elem;
+        break;
+      }
+    }
+    const newCartItem = { data: item, amount: itemData.amount };
+
+    setCartContent(prevState => {
+      return ([...prevState, newCartItem])
+    });
+
+    console.log('Item added to cart');
+
+  };
 
   return (
     <React.Fragment>
-      {cartOpened && <CartModal onClose={closeCartHandler} />}
+      {cartOpened && <CartModal content={cartContent} onClose={closeCartHandler} />}
       <Header onCartOpen={openCartHandler} />
       <About />
-      <ItemsList items={testData} />
+      <ItemsList onAddToCart={addToCartHandler} items={testData} />
     </React.Fragment>
   );
 }

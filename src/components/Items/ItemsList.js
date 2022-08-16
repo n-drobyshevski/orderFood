@@ -10,7 +10,9 @@ const ItemsList = (props) => {
                 {props.items.map((item) => {
                     return (
                         <Item
+                            onAddToCart={props.onAddToCart}
                             key={item.id}
+                            id={item.id}
                             name={item.name}
                             desc={item.description}
                             price={item.price}

@@ -1,24 +1,24 @@
-import styles from './CartList.module.css';
+import './CartList.module.css';
 
-import Card from '../UI/Card/Card';
 import CartItem from './CartItem';
 
 const CartList = (props) => {
+    console.log(props.items);
     return (
-        <Card className={styles.itemsList}>
-            <ul>
-                {props.items.map((item) => {
-                    return (
-                        <CartItem
-                            key={item.id}
-                            name={item.name}
-                            desc={item.description}
-                            price={item.price}
-                        />
-                    );
-                })}
-            </ul>
-        </Card>
+        <ul>
+            {props.items.map((item) => {
+                // console.log(data);
+                return (
+                    <CartItem
+                        key={item.data.id}
+                        name={item.data.name}
+                        desc={item.data.description}
+                        price={item.data.price}
+                        amount={item.amount}
+                    />
+                );
+            })}
+        </ul>
     )
 };
 
