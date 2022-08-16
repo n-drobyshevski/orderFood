@@ -2,9 +2,9 @@ import './CartModal.module.css';
 
 import Modal from '../UI/Modal/Modal';
 
-const CartModal = () => {
+const CartModal = (props) => {
     return(
-        <Modal title='Cart'>
+        <Modal onClose={props.onClose} title='Cart'>
             
         </Modal>
     )

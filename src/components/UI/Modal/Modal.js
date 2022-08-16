@@ -11,6 +11,7 @@ const Backdrop = () => {
 };
 
 const Modal = (props) => {
+
     return (
         <React.Fragment>
 
@@ -27,7 +28,7 @@ const Modal = (props) => {
                     </main>
                     <footer>
                         <Button>Order</Button>
-                        <Button>Close</Button>
+                        <Button onClick={props.onClose}>Close</Button>
                     </footer>
                 </Card>,
                 document.getElementById('overlay-root'))}
