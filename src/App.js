@@ -6,10 +6,10 @@ import CartModal from "./components/Cart/CartModal";
 
 
 const testData = [
-  { id: 'M1', name: 'Meal 1', description: 'some desc', price: '$90.00' },
-  { id: 'M2', name: 'Meal 2', description: 'some desc', price: '$10.99' },
-  { id: 'M3', name: 'Meal 3', description: 'some desc', price: '$25.55' },
-  { id: 'M4', name: 'Meal 4', description: 'some desc', price: '$54.05' },
+  { id: 'M1', name: 'Meal 1', description: 'some desc', price: 90.00 },
+  { id: 'M2', name: 'Meal 2', description: 'some desc', price: 10.99 },
+  { id: 'M3', name: 'Meal 3', description: 'some desc', price: 25.55 },
+  { id: 'M4', name: 'Meal 4', description: 'some desc', price: 54.05 },
 ];
 
 const getItemById = (id) => {
@@ -24,7 +24,13 @@ const cartReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
       const item = getItemById(action.itemId);
-      return [...state,  { ...item, ...{ amount: action.amount } }];
+      return [...state, { ...item, ...{ amount: action.amount } }];
+    case 'STACKING_ITEM':
+      return state.map(item=>{
+        if(item.id === action.id){
+          return {...item, amount: item.amount+action.amount}
+        }
+      });
     default:
       return state;
   }
@@ -45,31 +51,14 @@ function App() {
   };
 
   const addToCartHandler = (itemToAddData) => {
+    for (let cartItem of cartContent) {
+      if (cartItem.id === itemToAddData.id) {    
+        dispatchCartContent({ type: 'STACKING_ITEM', id: itemToAddData.id, amount: itemToAddData.amount });
+        return;
+      }
+    };
 
-
-    // for (let cartItem of cartContent) {
-    //   if (cartItem.id === itemToAddData.id) { // verifying if item is already in cart
-
-    //     setCartContent(prevState => {
-    //       prevState.map(item => {
-    //         if (cartItem.id === itemToAddData.id) {
-    //           item = { ...item, ...{ amount: item.amount + itemToAddData.amount } };
-    //         };
-    //       });
-    //       console.log(prevState)
-    //       return prevState;
-    //     });
-
-    //   }
-    //   return;
-    // }
-
-
-    // getting item data from testData 
-    dispatchCartContent({ type: 'ADD_TO_CART', itemId: itemToAddData.id, amount: itemToAddData.amount })
-    // setCartContent(prevState => {
-    //   return ([...prevState, newCartItem])
-    // });
+    dispatchCartContent({ type: 'ADD_TO_CART', itemId: itemToAddData.id, amount: itemToAddData.amount });
 
   };
 

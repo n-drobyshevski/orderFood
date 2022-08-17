@@ -7,7 +7,7 @@ const AddToCartForm = (props) => {
     const [amount, setAmount] = useState('');
 
     const amountChangeHandler = (event) => {
-        setAmount(event.target.value);
+        setAmount(+event.target.value);
     };
     const submitHandler = (event) => {
         event.preventDefault();

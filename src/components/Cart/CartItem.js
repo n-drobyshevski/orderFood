@@ -8,7 +8,8 @@ const CartItem = (props) => {
             <div className={styles.info}>
                 <div className={styles['info-main']}>
                     <h4>{props.name}</h4>
-                    <h5 className={styles.price} >{props.price}</h5>
+                    <h5 className={styles.price} >${props.price}</h5>
+
                 </div>
                 <div className={styles.amount}>
                     <p>x {props.amount}</p>

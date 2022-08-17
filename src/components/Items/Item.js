@@ -11,7 +11,7 @@ const Item = (props) => {
             <div className={styles.mainContent}>
                 <h3>{props.name}</h3>
                 <p><i>{props.desc}</i></p>
-                <h4 className={styles.price}>{props.price}</h4>
+                <h4 className={styles.price}>${props.price}</h4>
             </div>
             <AddToCartForm onSubmit={addToCartHandler}/>
         </li>
