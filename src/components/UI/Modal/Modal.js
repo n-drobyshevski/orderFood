@@ -6,8 +6,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from '../Card/Card';
 
-const Backdrop = () => {
-    return (<div className={styles.backdrop}></div>)
+const Backdrop = (props) => {
+    return (<div onClick={props.onClose} className={styles.backdrop}></div>)
 };
 
 const Modal = (props) => {
@@ -15,7 +15,7 @@ const Modal = (props) => {
     return (
         <React.Fragment>
 
-            {ReactDOM.createPortal(<Backdrop />, document.getElementById('backdrop-root'))}
+            {ReactDOM.createPortal(<Backdrop onClose={props.onClose} />, document.getElementById('backdrop-root'))}
             {ReactDOM.createPortal(
                 <Card className={`${styles.modal} ${props.className}` }>
                     <header>

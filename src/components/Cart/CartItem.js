@@ -4,7 +4,7 @@ import styles from './CartItem.module.css';
 const CartItem = (props) => {
     return (
         // refactor item component
-        <li>
+        <li className={styles['cart-item']}>
             <div className={styles.info}>
                 <div className={styles['info-main']}>
                     <h4>{props.name}</h4>

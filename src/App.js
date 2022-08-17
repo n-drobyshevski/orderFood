@@ -30,6 +30,7 @@ const cartReducer = (state, action) => {
         if(item.id === action.id){
           return {...item, amount: item.amount+action.amount}
         }
+        return item;
       });
     default:
       return state;

@@ -1,9 +1,9 @@
-li {
+.item {
     display: flex;
     padding: 1rem 1.2rem;
 }
 
-li:not(:last-child) {
+.item:not(:last-child) {
     border-bottom: 1px solid #666;
 }
 

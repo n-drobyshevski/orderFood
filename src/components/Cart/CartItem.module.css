@@ -1,6 +1,10 @@
-li{
+.cart-item {
     display: flex;
+    border-bottom: 1px solid #666;
+    padding-bottom: 1rem;
 }
+
+
 .info{
     display: flex;
     flex-grow: 1;

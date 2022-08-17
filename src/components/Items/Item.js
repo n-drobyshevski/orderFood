@@ -7,7 +7,7 @@ const Item = (props) => {
     };
 
     return (
-        <li>
+        <li className={styles.item}>
             <div className={styles.mainContent}>
                 <h3>{props.name}</h3>
                 <p><i>{props.desc}</i></p>
