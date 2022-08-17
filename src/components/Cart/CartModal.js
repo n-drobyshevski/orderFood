@@ -9,7 +9,7 @@ const CartModal = (props) => {
             <CartList items={props.content}/>
             <div className={styles['total-amount']}>
                 <h3 className={styles['total-amount__label']}>Total Amount:</h3>
-                <h3>$ {props.totalAmount || '00.00'}</h3>
+                <h3>$ {props.totalPrice}</h3>
             </div>
         </Modal>
     )

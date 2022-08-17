@@ -8,7 +8,7 @@ const Header = (props) => {
             <Button onClick={props.onCartOpen} type='button'>
                 <span className={styles.icon}></span>
                 Cart
-                <span className={styles.badge}>2</span>
+                {props.cartItemsQuantity && <span className={styles.badge}>{props.cartItemsQuantity}</span>}
             </Button>
         </div>
     );

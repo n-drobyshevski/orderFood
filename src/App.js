@@ -24,14 +24,24 @@ const cartReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
       const item = getItemById(action.itemId);
-      return [...state, { ...item, ...{ amount: action.amount } }];
+      return {
+        totalAmount: state.totalAmount + action.amount,
+        totalPrice: state.totalPrice + item.price,
+        data: [...state.data, { ...item, ...{ amount: action.amount } }],
+      };
+
     case 'STACKING_ITEM':
-      return state.map(item=>{
-        if(item.id === action.id){
-          return {...item, amount: item.amount+action.amount}
-        }
-        return item;
-      });
+      return {
+        totalAmount: state.totalAmount + action.amount,
+        totalPrice: state.totalPrice + action.amount * getItemById(action.id).price,
+        data: state.data.map(item => {
+          if (item.id === action.id) {
+            return { ...item, amount: item.amount + action.amount }
+          }
+          return item;
+        }),
+      };
+
     default:
       return state;
   }
@@ -41,7 +51,7 @@ function App() {
 
   const [cartOpened, setCartOpened] = useState(false);
 
-  const [cartContent, dispatchCartContent] = useReducer(cartReducer, []);
+  const [cartContent, dispatchCartContent] = useReducer(cartReducer, { totalAmount: null, totalPrice: null, data: [] });
 
   const closeCartHandler = () => {
     setCartOpened(false);
@@ -52,8 +62,8 @@ function App() {
   };
 
   const addToCartHandler = (itemToAddData) => {
-    for (let cartItem of cartContent) {
-      if (cartItem.id === itemToAddData.id) {    
+    for (let cartItem of cartContent.data) {
+      if (cartItem.id === itemToAddData.id) {
         dispatchCartContent({ type: 'STACKING_ITEM', id: itemToAddData.id, amount: itemToAddData.amount });
         return;
       }
@@ -71,8 +81,13 @@ function App() {
 
   return (
     <React.Fragment>
-      {cartOpened && <CartModal content={cartContent} onClose={closeCartHandler} />}
-      <Header onCartOpen={openCartHandler} />
+      {cartOpened && <CartModal
+        content={cartContent.data}
+        totalPrice={cartContent.totalPrice}
+        onClose={closeCartHandler} />}
+      <Header
+        cartItemsQuantity={cartContent.totalAmount}
+        onCartOpen={openCartHandler} />
       <About />
       <ItemsList onAddToCart={addToCartHandler} items={testData} />
     </React.Fragment>
