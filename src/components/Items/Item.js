@@ -1,9 +1,24 @@
 import AddToCartForm from './AddToCartForm';
 import styles from './Item.module.css';
 
+import { useContext } from 'react';
+import CartContext from '../../store/cart-context';
+
 const Item = (props) => {
+    const cartCtx = useContext(CartContext);
+
+    const price = props.price.toFixed(2);
+
     const addToCartHandler = (amount) => {
-        props.onAddToCart({id:props.id, amount:amount});
+        console.log('addToCartHandler');
+        console.log(amount);
+        // props.onAddToCart({ id: props.id, amount: amount });
+        cartCtx.addItem({
+            id: props.id,
+            name: props.name,
+            amount: amount,
+            price: price
+        });
     };
 
     return (
@@ -11,9 +26,9 @@ const Item = (props) => {
             <div className={styles.mainContent}>
                 <h3>{props.name}</h3>
                 <p><i>{props.desc}</i></p>
-                <h4 className={styles.price}>${props.price}</h4>
+                <h4 className={styles.price}>${price}</h4>
             </div>
-            <AddToCartForm onSubmit={addToCartHandler}/>
+            <AddToCartForm onSubmit={addToCartHandler} />
         </li>
     )
 };

@@ -3,6 +3,8 @@ import Header from "./components/Header/Header";
 import About from "./components/About/About"
 import ItemsList from './components/Items/ItemsList'
 import CartModal from "./components/Cart/CartModal";
+import CartContext from "./store/cart-context";
+import CartProvider from "./store/CartProvider";
 
 
 const testData = [
@@ -80,7 +82,7 @@ function App() {
   }, [cartContent]);
 
   return (
-    <React.Fragment>
+    <CartProvider>
       {cartOpened && <CartModal
         content={cartContent.data}
         totalPrice={cartContent.totalPrice}
@@ -90,7 +92,7 @@ function App() {
         onCartOpen={openCartHandler} />
       <About />
       <ItemsList onAddToCart={addToCartHandler} items={testData} />
-    </React.Fragment>
+    </CartProvider>
   );
 }
 

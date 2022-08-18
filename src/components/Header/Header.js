@@ -1,14 +1,18 @@
 import styles from './Header.module.css';
 import Button from '../UI/Button/Button';
 
+import { useContext } from 'react';
+import CartContext from '../../store/cart-context';
+
 const Header = (props) => {
+    const cartCtx = useContext(CartContext);
     return (
         <div className={styles.header}>
             <h1>Food</h1>
             <Button onClick={props.onCartOpen} type='button'>
                 <span className={styles.icon}></span>
                 Cart
-                {props.cartItemsQuantity && <span className={styles.badge}>{props.cartItemsQuantity}</span>}
+                {cartCtx.totalAmount !== 0 && <span className={styles.badge}>{cartCtx.totalAmount}</span>}
             </Button>
         </div>
     );
