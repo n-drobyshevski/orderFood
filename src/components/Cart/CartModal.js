@@ -15,7 +15,7 @@ const CartModal = (props) => {
             </header>
             {cartCtx.items.length ?
                 <main>
-                    <CartList items={props.content} />
+                    <CartList />
                 </main>
                 :
                 <main>

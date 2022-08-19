@@ -5,16 +5,11 @@ import styles from './AddToCartForm.module.css';
 import { useState, useRef } from 'react';
 
 const AddToCartForm = (props) => {
-    // const [amount, setAmount] = useState('');
     const amountInputRef = useRef();
     const formRef = useRef();
     const [amountIsValid, setAmountIsValid] = useState(true);
 
-    // const amountChangeHandler = (event) => {
-    //     setAmount(+event.target.value);
-    // };
     const submitHandler = (event) => {
-        console.log('form submit')
         event.preventDefault();
         const enteredAmount = amountInputRef.current.value;
         const enteredAmountNumber = +enteredAmount;
