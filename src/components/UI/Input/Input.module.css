@@ -1,0 +1,14 @@
+.input {
+    display: flex;
+    gap: .5rem;
+    justify-content: end;
+    align-items: center;
+
+}
+
+input {
+    appearance: textfield;
+    margin: 0;
+    width: 2.2rem;
+    padding: .2rem .5rem;
+}
