@@ -1,21 +1,26 @@
 .cart-item {
     display: flex;
+}
+
+.cart-item:not(:last-child) {
     border-bottom: 1px solid #666;
     padding-bottom: 1rem;
+
 }
 
-
-.info{
+.info {
     display: flex;
     flex-grow: 1;
-    gap:2.5rem;
+    gap: 2.5rem;
     align-items: flex-end;
 }
-.info-main{
+
+.info-main {
     display: flex;
     flex-direction: column;
 }
-.amount{
+
+.amount {
     margin: 0;
     border: 1px solid #666;
     border-radius: 12px;
@@ -23,6 +28,6 @@
     height: min-content;
 }
 
-button:not(:first-child){
+button:not(:first-child) {
     margin-left: .5rem;
 }

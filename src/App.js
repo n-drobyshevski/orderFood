@@ -3,7 +3,6 @@ import Header from "./components/Header/Header";
 import About from "./components/About/About"
 import ItemsList from './components/Items/ItemsList'
 import CartModal from "./components/Cart/CartModal";
-import CartContext from "./store/cart-context";
 import CartProvider from "./store/CartProvider";
 
 
@@ -87,6 +86,7 @@ function App() {
         content={cartContent.data}
         totalPrice={cartContent.totalPrice}
         onClose={closeCartHandler} />}
+
       <Header
         cartItemsQuantity={cartContent.totalAmount}
         onCartOpen={openCartHandler} />
