@@ -1,12 +1,11 @@
 import styles from './ItemsList.module.css';
-
-import Card from '../UI/Card/Card';
+import Card from '../../UI/Card/Card';
 import Item from './Item';
 
 const ItemsList = (props) => {
     return (
-        <Card className={styles.itemsList}>
-            <ul>
+        <section>
+            <ul className={styles['items-list']}>
                 {props.items.map((item) => {
                     return (
                         <Item
@@ -19,7 +18,7 @@ const ItemsList = (props) => {
                     );
                 })}
             </ul>
-        </Card>
+        </section>
     )
 };
 

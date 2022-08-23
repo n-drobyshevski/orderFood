@@ -1,0 +1,7 @@
+.main {
+    padding: 0 2rem;
+}
+
+.main section:not(:first-child) {
+    margin-top: 1.2rem;
+}

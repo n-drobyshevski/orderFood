@@ -1,4 +1,4 @@
-import './CartList.module.css';
+import styles from './CartList.module.css';
 
 import CartItem from './CartItem';
 
@@ -8,7 +8,7 @@ import { useContext } from 'react';
 const CartList = (props) => {
     const cartCtx = useContext(CartContext);
     return (
-        <ul>
+        <ul className={styles['cart-list']}>
             {cartCtx.items.map((item) => {
                 return (
                     <CartItem

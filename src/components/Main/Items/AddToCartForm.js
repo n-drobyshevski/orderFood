@@ -1,5 +1,5 @@
-import Button from '../UI/Button/Button';
-import Input from '../UI/Input/Input';
+import Button from '../../UI/Button/Button';
+import Input from '../../UI/Input/Input';
 import styles from './AddToCartForm.module.css';
 
 import { useState, useRef } from 'react';
@@ -34,7 +34,6 @@ const AddToCartForm = (props) => {
                 label='Amount'
                 input={{
                     defaultValue: '1',
-                    // onChange: { amountChangeHandler },
                     id: 'amount_' + props.id,
                     type: 'number',
                     min: 1,

@@ -1,8 +1,8 @@
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 5%;
-    background-color:#404abf;
+    padding: 1rem 50px;
+    /* background-color:#404abf; */
     align-items: center;
 }
 
@@ -25,5 +25,5 @@
     padding: 5px 10px;
     border-radius: 50%;
     background: red;
-    color: white;
+    color: black;
 }

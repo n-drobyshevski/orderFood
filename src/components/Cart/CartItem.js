@@ -18,7 +18,6 @@ const CartItem = (props) => {
         cartCtx.removeItem(props.id);
     };
     return (
-        // refactor item component
         <li className={styles['cart-item']}>
             <div className={styles.info}>
                 <div className={styles['info-main']}>

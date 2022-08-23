@@ -1,0 +1,31 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 150px;
+    max-width: 50%;
+    border-radius: 12px;
+}
+
+.main-content {
+    padding: 1rem 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px 12px 0 0;
+    background-color: rgb(212, 212, 212);
+}
+
+.price {
+    /* color: white; */
+}
