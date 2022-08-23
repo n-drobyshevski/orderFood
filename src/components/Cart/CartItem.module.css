@@ -28,6 +28,7 @@
     height: min-content;
 }
 
+/* 
 button:not(:first-child) {
     margin-left: .5rem;
-}
+} */

@@ -17,6 +17,8 @@ html {
 h1,
 h2,
 h3,
+h4,
+h5,
 p {
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
@@ -50,15 +52,10 @@ html {
 }
 
 body {
-  min-height: 100vh;
-  height: fit-content;
-  color: #00000087;
+  min-height: fit-content;
+  color: #000000de;
   line-height: 1.2;
   margin: 0;
-  /* background-image: url('../public/layered-waves.svg'); */
-  background-color: whitesmoke;
-  background-size: cover;
-  background-position: bottom center, 50%, 50%;
 }
 
 ul {
@@ -71,12 +68,15 @@ ul {
 }
 
 #root {
-  height: 100vh;
+  min-height: 100vh;
+  max-height: fit-content;
   width: 100vw;
-  margin: 0;
+  /* max-width: 1180px; */
+  /* margin: 0 auto  ; */
   display: grid;
   grid: 100px 1fr / 25% 75%;
   grid-template-areas: "header header""aside main";
+  background-color: #D6E6F2;
 }
 
 header {

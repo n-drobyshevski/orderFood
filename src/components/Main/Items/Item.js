@@ -29,14 +29,14 @@ const Item = (props) => {
                 <div className={styles['item-image']}></div>
                 <div className={styles['main-content']}>
                     <div className={styles.info}>
-                        <h3>{props.name}</h3>
+                        <h4>{props.name}</h4>
                         {/* <p><i>{props.desc}</i></p> */}
-                        <h4 className={styles.price}>${price}</h4>
+                        <h5 className={styles.price}>${price}</h5>
                     </div>
-                    <Button onClick={addToCartHandler}>Add to cart</Button>
+                    <Button className="large filled" onClick={addToCartHandler}>+</Button>
                 </div>
             </Card>
-        </li>
+        </li >
     )
 };
 
