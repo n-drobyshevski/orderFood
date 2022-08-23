@@ -1,13 +1,13 @@
-import AddToCartForm from './AddToCartForm';
+// import AddToCartForm from './AddToCartForm';
 import styles from './Item.module.css';
 
-import { useContext } from 'react';
-import CartContext from '../../../store/cart-context';
+// import { useContext } from 'react';
+// import CartContext from '../../../store/cart-context';
 import Button from '../../UI/Button/Button';
 import Card from '../../UI/Card/Card';
 
 const Item = (props) => {
-    const cartCtx = useContext(CartContext);
+    // const cartCtx = useContext(CartContext);
 
     const price = props.price.toFixed(2);
 

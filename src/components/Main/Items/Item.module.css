@@ -3,7 +3,7 @@
     flex-direction: column;
     flex-grow: 1;
     min-width: 200px;
-    max-width: 50%;
+    max-width: 400px;
     border-radius: 12px;
 }
 
@@ -25,8 +25,4 @@
     height: 200px;
     border-radius: 16px 16px 0 0;
     background-color: rgb(212, 212, 212);
-}
-
-.price {
-    /* color: white; */
 }

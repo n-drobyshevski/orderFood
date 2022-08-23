@@ -1,12 +1,21 @@
 aside {
     display: flex;
     flex-direction: column;
-    padding: 1rem 50px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
+    gap: 50px;
+    background-color: #769FCD;
+    min-width: 200px;
+    height: 95vh;
 }
 
 section {
     display: flex;
     flex-direction: column;
+}
+
+.logo {
+    color: white;
 }

@@ -1,0 +1,24 @@
+.menu-item {
+    display: flex;
+    gap: 8px;
+    color: white;
+    padding: .7rem 1rem;
+    align-items: center;
+}
+
+.menu-item.highlighted {
+    background-color: white;
+    color: #769FCD;
+    border-radius: 16px;
+    border: 1px solid #769FCD;
+}
+
+.menu-item.highlighted svg {
+    fill: #769FCD;
+}
+
+.menu-item svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: white
+}

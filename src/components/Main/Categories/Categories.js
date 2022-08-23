@@ -7,9 +7,11 @@ const Categories = () => {
     return (
         <section className={styles.categories}>
             {categoriesData.map(category => {
-                <div className={styles.category} >
-                    <p>{category.name}</p>
-                </div>
+                return (
+                    <div className={styles.category} >
+                        <p>{category.name}</p>
+                    </div>
+                )
             }
             )}
         </section>

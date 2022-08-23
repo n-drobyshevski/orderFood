@@ -1,5 +1,4 @@
 import styles from './ItemsList.module.css';
-import Card from '../../UI/Card/Card';
 import Item from './Item';
 
 const ItemsList = (props) => {

@@ -68,15 +68,18 @@ ul {
 }
 
 #root {
-  min-height: 100vh;
-  max-height: fit-content;
+  height: 100vh;
   width: 100vw;
   /* max-width: 1180px; */
   /* margin: 0 auto  ; */
   display: grid;
-  grid: 100px 1fr / 25% 75%;
-  grid-template-areas: "header header""aside main";
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: 1fr 100px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-areas: "aside main""aside footer";
   background-color: #D6E6F2;
+  overflow: hidden;
 }
 
 header {
