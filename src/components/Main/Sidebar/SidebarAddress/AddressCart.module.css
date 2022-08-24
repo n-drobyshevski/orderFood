@@ -1,0 +1,35 @@
+.address-card {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    padding: 1rem 1.2rem;
+}
+
+.address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.address div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.address div svg {
+    color: #769FCD;
+}
+
+.address div p {
+    color: #769FCD;
+}
+
+.description {
+    font-size: .9em;
+}
+
+.button-group {
+    display: flex;
+    gap: .7rem;
+}

@@ -10,7 +10,7 @@ const SidebarCart = () => {
     return (
         <div className={styles['sidebar-cart']}>
             <Card className={styles['sidebar-cart-content']}>
-                <h3>Cart</h3>
+                <h4>Cart</h4>
 
                 <div>
                     {menuItems.map(item => {
