@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import Header from "./components/Header/Header";
 import CartModal from "./components/Cart/CartModal";
 import CartProvider from "./store/CartProvider";
-import Sidebar from "./components/Sidebar/Sidebar";
+import SideMenuContainer from "./components/SideMenu/SideMenuContainer";
 import Main from "./components/Main/Main";
 
 const testData = [
@@ -28,7 +28,7 @@ function App() {
   return (
     <CartProvider>
       {cartOpened && <CartModal onClose={closeCartHandler} />}
-      <Sidebar />
+      <SideMenuContainer />
       <Main data={testData} />
     </CartProvider>
   );

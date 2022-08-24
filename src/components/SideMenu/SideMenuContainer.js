@@ -1,7 +1,7 @@
-import styles from './Sidebar.module.css';
+import styles from './SideMenuContainer.module.css';
 import SideMenu from './SideMenu';
 
-const Sidebar = () => {
+const SideMenuContainer = () => {
     return (
         <aside>
             <h1 className={styles.logo} >Food App</h1>
@@ -10,4 +10,4 @@ const Sidebar = () => {
     )
 };
 
-export default Sidebar;
+export default SideMenuContainer;
