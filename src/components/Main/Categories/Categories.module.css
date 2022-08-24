@@ -1,10 +1,5 @@
 .categories {
     display: flex;
+    justify-content: space-between;
     gap: 1rem;
-}
-
-.category {
-    padding: .5rem .1rem;
-    border: 1px solid #666;
-    border-radius: 12px;
 }

@@ -11,7 +11,7 @@ aside {
     height: 95vh;
 }
 
-section {
+aside section {
     display: flex;
     flex-direction: column;
 }

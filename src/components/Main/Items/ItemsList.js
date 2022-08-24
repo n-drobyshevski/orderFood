@@ -1,9 +1,10 @@
 import styles from './ItemsList.module.css';
 import Item from './Item';
+import Section from '../Section/Section';
 
 const ItemsList = (props) => {
     return (
-        <section>
+        <Section sectionTitle='Meals' className='meals'>
             <ul className={styles['items-list']}>
                 {props.items.map((item) => {
                     return (
@@ -17,7 +18,7 @@ const ItemsList = (props) => {
                     );
                 })}
             </ul>
-        </section>
+        </Section>
     )
 };
 

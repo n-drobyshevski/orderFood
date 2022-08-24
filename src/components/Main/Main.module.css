@@ -15,6 +15,10 @@ main header {
 
 main .main-content {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
 }
 
 .main section:not(:first-child) {
