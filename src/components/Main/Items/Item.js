@@ -33,7 +33,7 @@ const Item = (props) => {
                         {/* <p><i>{props.desc}</i></p> */}
                         <h5 className={styles.price}>${price}</h5>
                     </div>
-                    <Button className="large filled" onClick={addToCartHandler}>+</Button>
+                    <Button className="large fill" onClick={addToCartHandler}>+</Button>
                 </div>
             </Card>
         </li >

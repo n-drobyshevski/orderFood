@@ -6,7 +6,7 @@ const Button = (props) => {
     // {with icon or not, size}\
     let classes = styles.button
     if (props.className) {
-        const color = props.className.includes('filled') ? `${styles.filled}` : '';
+        const color = props.className.includes('fill') ? `${styles.fill}` : '';
         const type = props.className.includes('icon') ? ` ${styles.button} ${styles['icon-button']} ` : styles.button;
         const size = props.className.includes('large') ? styles.large
             : props.className.includes('small') ? styles.small : '';

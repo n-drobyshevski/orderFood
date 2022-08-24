@@ -1,4 +1,4 @@
-aside {
+aside.side-menu-container {
     display: flex;
     flex-direction: column;
     padding: 1.2rem 1.5rem;
@@ -11,7 +11,7 @@ aside {
     height: 95vh;
 }
 
-aside section {
+aside.side-menu-container section {
     display: flex;
     flex-direction: column;
 }

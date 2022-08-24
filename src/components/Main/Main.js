@@ -3,6 +3,7 @@ import Banner from './Banner/Banner';
 import ItemsList from './Items/ItemsList';
 import Categories from './Categories/Categories';
 import Header from './Header/Header';
+import Sidebar from './Sidebar/Sidebar';
 const Main = props => {
     return (
         <main className={styles.main}>
@@ -15,6 +16,7 @@ const Main = props => {
                 <Categories />
                 <ItemsList items={props.data} />
             </div>
+            <Sidebar />
         </main >
     )
 };

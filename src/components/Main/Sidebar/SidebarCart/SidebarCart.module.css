@@ -1,0 +1,10 @@
+.sidebar-cart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.2rem;
+}
+
+.sidebar-cart-content {
+    padding: 1rem 1.2rem;
+}
