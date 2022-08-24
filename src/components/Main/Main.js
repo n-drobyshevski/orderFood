@@ -1,5 +1,5 @@
 import styles from './Main.module.css';
-import About from './About/About';
+import Banner from './Banner/Banner';
 import ItemsList from './Items/ItemsList';
 import Categories from './Categories/Categories';
 import Header from './Header/Header';
@@ -11,7 +11,7 @@ const Main = props => {
             // onCartOpen={openCartHandler} /
             />
             <div className={styles['main-content']}>
-                <About />
+                <Banner />
                 <Categories />
                 <ItemsList items={props.data} />
             </div>
