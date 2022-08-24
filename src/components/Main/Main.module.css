@@ -1,6 +1,5 @@
 .main {
     padding: 0 2rem;
-    overflow-y: scroll;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 300px;

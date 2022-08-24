@@ -78,27 +78,35 @@
     padding-right: 20px;
 }
 
-.button.icon-button>svg {
-    height: 20px;
+.button.icon-button svg {
+    height: 1.2rem;
+    width: 1.2rem;
     margin-right: 8px;
     display: inline-block;
     vertical-align: bottom;
 }
 
+
 .button.icon-button.large {
     padding-right: 24px;
 }
 
-.button.icon-button.large>svg {
+.button.icon-button.large svg {
     margin-right: 8px;
-    height: 24px;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 .button.icon-button.small {
     padding-right: 16px;
 }
 
-.button.icon-button.small>svg {
+.button.icon-button.small svg {
     margin-right: 6px;
-    height: 16px;
+    height: 1rem;
+    width: 1rem;
+}
+
+.button.icon-button.noText svg {
+    margin: 0;
 }

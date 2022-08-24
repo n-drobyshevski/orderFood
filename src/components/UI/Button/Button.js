@@ -11,7 +11,7 @@ const Button = (props) => {
         const size = props.className.includes('large') ? styles.large
             : props.className.includes('small') ? styles.small : '';
 
-        classes = `${type} ${size} ${color}`
+        classes = `${type} ${size} ${color} ${props.noText && styles.noText}`
     };
 
     return (

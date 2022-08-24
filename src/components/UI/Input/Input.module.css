@@ -1,14 +1,33 @@
 .input {
     display: flex;
-    gap: .5rem;
-    justify-content: flex-end;
+    gap: .7rem;
     align-items: center;
 
 }
 
 input {
+    border-radius: 12px;
+    font-size: 16px;
+    border: 1px solid #769FCD;
+    height: 2.5rem;
     appearance: textfield;
     margin: 0;
-    width: 2.2rem;
-    padding: .2rem .5rem;
+    padding: 1rem;
+    display: flex;
+    width: fit-content;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    padding-left: 3rem;
+}
+
+.input-with-icon span.icon {
+    z-index: 1;
+    position: absolute;
+    left: 1rem;
+    top: .75rem;
 }
