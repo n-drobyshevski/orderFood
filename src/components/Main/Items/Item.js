@@ -6,6 +6,7 @@ import styles from './Item.module.css';
 import Button from '../../UI/Button/Button';
 import Card from '../../UI/Card/Card';
 
+import { HiOutlinePlus } from 'react-icons/hi';
 const Item = (props) => {
     // const cartCtx = useContext(CartContext);
 
@@ -33,7 +34,7 @@ const Item = (props) => {
                         {/* <p><i>{props.desc}</i></p> */}
                         <h5 className={styles.price}>${price}</h5>
                     </div>
-                    <Button className="large fill" onClick={addToCartHandler}>+</Button>
+                    <Button size='large' fill={true} onClick={addToCartHandler}><HiOutlinePlus /></Button>
                 </div>
             </Card>
         </li >

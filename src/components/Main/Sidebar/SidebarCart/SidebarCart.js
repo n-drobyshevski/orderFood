@@ -29,7 +29,7 @@ const SidebarCart = () => {
                 </div>
             </Card>
 
-            <Button className='fill' >Checkout</Button>
+            <Button fill={true} >Checkout</Button>
         </div>
     )
 };

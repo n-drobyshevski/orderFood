@@ -53,7 +53,7 @@
 }
 
 .button.fill {
-    background-color: #769FCD;
+    background-color: #6f2be8;
     color: #ffffffde;
     border: none;
 
@@ -72,41 +72,79 @@
     padding: 10px 12px;
 }
 
-/* || buttons with icon*/
+/* || styles for buttons with icons*/
 
-.button .icon-button {
+/* regular size */
+.button.icon-before {
     padding-right: 20px;
 }
 
-.button.icon-button svg {
+.button.icon-after {
+    padding-left: 20px;
+}
+
+.button.icon-without-text svg,
+.button.icon-before svg,
+.button.icon-after svg {
     height: 1.2rem;
     width: 1.2rem;
-    margin-right: 8px;
     display: inline-block;
     vertical-align: bottom;
 }
 
+.button.icon-before svg {
+    margin-right: 8px;
 
-.button.icon-button.large {
+}
+
+.button.icon-after svg {
+    margin-left: 8px;
+}
+
+/* Large size icon buttons  */
+
+.button.large.icon-before {
     padding-right: 24px;
 }
 
-.button.icon-button.large svg {
-    margin-right: 8px;
+.button.large.icon-after {
+    padding-left: 24px;
+}
+
+.button.large.icon-without-text svg,
+.button.large.icon-button svg,
+.button.large.icon-after svg {
     height: 1.5rem;
     width: 1.5rem;
 }
 
-.button.icon-button.small {
+/* Small size icon buttons */
+.button.small.icon-before {
     padding-right: 16px;
 }
 
-.button.icon-button.small svg {
-    margin-right: 6px;
+.button.small.icon-after {
+    padding-left: 16px;
+}
+
+.button.small.icon-without-text svg,
+.button.small.icon-before svg,
+.button.small.icon-after svg {
     height: 1rem;
     width: 1rem;
 }
 
-.button.icon-button.noText svg {
+.button.small.icon-before svg {
+    margin-right: 6px;
+
+}
+
+.button.small.icon-after svg {
+    margin-left: 6px;
+}
+
+.button.icon-without-text svg,
+.button.large.icon-without-text svg,
+.button.small.icon-without-text svg {
     margin: 0;
 }

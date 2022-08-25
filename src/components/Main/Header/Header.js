@@ -26,15 +26,16 @@ const Header = (props) => {
             </div>
             <div className={styles.aside}>
                 <Button
-                    className='icon-button'
+                    icon='before'
                     onClick={props.onCartOpen}
-                    type='button'>
+                    type='button'
+                >
                     <HiShoppingCart />
                     Cart
                     {cartCtx.totalAmount !== 0 && <span className={styles.badge}>{cartCtx.totalAmount}</span>}
                 </Button>
-                <Button className='icon-button' noText={true} type='button'><HiOutlineCog /></Button>
-                <Button className='icon-button' noText={true} type='button'><HiOutlineBell /></Button>
+                <Button icon='without-text' type='button'><HiOutlineCog /></Button>
+                <Button icon='without-text' type='button'><HiOutlineBell /></Button>
             </ div>
         </header >
     );

@@ -17,14 +17,14 @@ const AddressCart = () => {
                         <HiLocationMarker />
                         <p>Street name, 23</p>
                     </div>
-                    <Button className='small fill'>change</Button>
+                    <Button size='small' fill={true}>Change</Button>
                 </div>
 
                 <p className={styles.description}>Lorem ipsum dolor sit amet, consectitur</p>
 
                 <div className={styles['button-group']}>
-                    <Button className='small fill'> Add details</Button>
-                    <Button className='small'>Add notes</Button>
+                    <Button size='small' fill={true}> Add details</Button>
+                    <Button size='small'>Add notes</Button>
                 </div>
 
             </div>

@@ -7,14 +7,14 @@
 }
 
 .menu-item.highlighted {
-    background-color: white;
-    color: #769FCD;
+    background-color: #e3d8ff;
+    color: #6f2be8;
     border-radius: 16px;
-    border: 1px solid #769FCD;
+    border: 1px solid #6f2be8;
 }
 
 .menu-item.highlighted svg {
-    fill: #769FCD;
+    fill: #6f2be8;
 }
 
 .menu-item svg {
