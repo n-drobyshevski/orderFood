@@ -42,8 +42,55 @@
     border-radius: 24px;
     border: 1px solid #666;
     width: fit-content;
-    gap: .7rem;
+    /* gap: .7rem; */
+}
+
+.amount-button-left,
+.amount-button-right {
     padding: .7rem .9rem;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color .2s ease-in;
+    appearance: none;
+    user-select: none;
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+}
+
+.amount-button-left {
+    padding-right: .5rem;
+    border-radius: 24px 0 0 24px;
+}
+
+
+.amount-button-right {
+    padding-left: .5rem;
+    border-radius: 0 24px 24px 0;
+}
+
+.amount-button-left:hover,
+.amount-button-right:hover {
+    background-color: #F3F4F6;
+    transition-duration: .1s;
+}
+
+.amount-button-left:active,
+.amount-button-right:active {
+    background-color: #EDEFF2;
+    animation-duration: .1s;
+}
+
+/* .amount-button-left:disabled,
+.amount-button-right:disabled {
+    background-color: #b3bfc7;
+    color: #00000061;
+    cursor: default;
+} */
+
+.amount-form-controls p {
+    padding: .7rem .5rem;
 }
 
 .amount-form-controls svg {
@@ -60,7 +107,7 @@
 
 .total-price {
     display: flex;
-    align-items: bottom;
+    align-items: center;
     gap: .5rem;
 }
 

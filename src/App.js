@@ -18,14 +18,14 @@ const testData = [
 function App() {
   const [cartOpened, setCartOpened] = useState(false);
   const [productModalOpened, setProductModalOpened] = useState(false);
+  const [currentItemInformation, setCurrentItemInformation] = useState({});
 
   const closeProductModalHandler = () => {
-    console.log('close product modal')
     setProductModalOpened(false);
   };
 
-  const openProductModalHandler = () => {
-    console.log('open')
+  const openProductModalHandler = (itemData) => {
+    setCurrentItemInformation(itemData);
     setProductModalOpened(true);
   };
 
@@ -41,7 +41,7 @@ function App() {
   return (
     <CartProvider>
       {cartOpened && <CartModal onClose={closeCartHandler} />}
-      {productModalOpened && <ProductModal onClose={closeProductModalHandler} />}
+      {productModalOpened && <ProductModal item={currentItemInformation} onClose={closeProductModalHandler} />}
       <SideMenuContainer />
       <Main onAddItemClick={openProductModalHandler}
         data={testData}

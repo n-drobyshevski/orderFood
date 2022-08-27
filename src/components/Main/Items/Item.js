@@ -21,8 +21,12 @@ const Item = (props) => {
     //     });
     // };
     const addItemClickHandler = () => {
-        console.log('add item');
-        props.onAddItemClick();
+        const itemData = {
+            id: props.id,
+            name: props.name,
+            price: price,
+        };
+        props.onAddItemClick(itemData);
     };
 
     return (
