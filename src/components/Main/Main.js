@@ -14,7 +14,8 @@ const Main = props => {
             <div className={styles['main-content']}>
                 <Banner />
                 <Categories />
-                <ItemsList items={props.data} />
+                <ItemsList onAddItemClick={props.onAddItemClick} items={props.data} />
+
             </div>
             <Sidebar />
         </main >

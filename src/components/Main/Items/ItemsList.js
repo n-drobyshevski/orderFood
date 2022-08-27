@@ -14,6 +14,8 @@ const ItemsList = (props) => {
                             name={item.name}
                             desc={item.description}
                             price={item.price}
+
+                            onAddItemClick={props.onAddItemClick}
                         />
                     );
                 })}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import Header from "./components/Header/Header";
 import CartModal from "./components/Cart/CartModal";
+import ProductModal from "./components/ProductModal/ProductModal";
 import CartProvider from "./store/CartProvider";
 import SideMenuContainer from "./components/SideMenu/SideMenuContainer";
 import Main from "./components/Main/Main";
@@ -16,6 +17,18 @@ const testData = [
 
 function App() {
   const [cartOpened, setCartOpened] = useState(false);
+  const [productModalOpened, setProductModalOpened] = useState(false);
+
+  const closeProductModalHandler = () => {
+    console.log('close product modal')
+    setProductModalOpened(false);
+  };
+
+  const openProductModalHandler = () => {
+    console.log('open')
+    setProductModalOpened(true);
+  };
+
 
   const closeCartHandler = () => {
     setCartOpened(false);
@@ -28,8 +41,11 @@ function App() {
   return (
     <CartProvider>
       {cartOpened && <CartModal onClose={closeCartHandler} />}
+      {productModalOpened && <ProductModal onClose={closeProductModalHandler} />}
       <SideMenuContainer />
-      <Main data={testData} />
+      <Main onAddItemClick={openProductModalHandler}
+        data={testData}
+      />
     </CartProvider>
   );
 }

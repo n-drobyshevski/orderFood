@@ -20,8 +20,9 @@ const Item = (props) => {
     //         price: price
     //     });
     // };
-    const addToCartHandler = () => {
-        console.log('add to cart');
+    const addItemClickHandler = () => {
+        console.log('add item');
+        props.onAddItemClick();
     };
 
     return (
@@ -34,7 +35,7 @@ const Item = (props) => {
                         {/* <p><i>{props.desc}</i></p> */}
                         <h5 className={styles.price}>${price}</h5>
                     </div>
-                    <Button size='large' fill={true} onClick={addToCartHandler}><HiOutlinePlus /></Button>
+                    <Button size='large' fill={true} onClick={addItemClickHandler}><HiOutlinePlus /></Button>
                 </div>
             </Card>
         </li >
