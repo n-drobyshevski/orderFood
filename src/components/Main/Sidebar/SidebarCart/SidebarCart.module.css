@@ -2,9 +2,23 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
 .sidebar-cart-content {
     padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
 }

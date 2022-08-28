@@ -1,0 +1,15 @@
+.sidebar-cart-item {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.main-info {
+    display: flex;
+    gap: .7rem;
+    align-items: baseline;
+}
+
+.main-info p {
+    color: rgb(83, 83, 83);
+}

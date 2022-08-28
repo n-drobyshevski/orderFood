@@ -16,7 +16,7 @@ const ProductModal = (props) => {
     const cartCtx = useContext(CartContext);
 
     useEffect(() => {
-        setTotalPrice(productAmount * props.item.price);
+        setTotalPrice((productAmount * props.item.price).toFixed(2));
     }, [productAmount, totalPrice, props.item.price]);
 
     const increaseItemsQuantity = () => {

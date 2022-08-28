@@ -16,7 +16,7 @@ const SidebarCart = () => {
             <Card className={styles['sidebar-cart-content']}>
                 <h4>Cart</h4>
 
-                <div>
+                <div className={styles['sidebar-items']}>
                     {cartCtx.items.map(item => {
                         return (
                             <SidebarCartItem
@@ -30,6 +30,7 @@ const SidebarCart = () => {
                 </div>
 
                 <div className={styles.total}>
+                    <h4>Total Price:</h4>
                     <h4>${cartCtx.totalPrice.toFixed(2)}</h4>
                 </div>
             </Card>
