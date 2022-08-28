@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Header from "./components/Header/Header";
 import CartModal from "./components/Cart/CartModal";
 import ProductModal from "./components/ProductModal/ProductModal";
 import CartProvider from "./store/CartProvider";
@@ -34,16 +33,18 @@ function App() {
     setCartOpened(false);
   };
 
-  // const openCartHandler = () => {
-  //   setCartOpened(true);
-  // };
+  const openCartHandler = () => {
+    setCartOpened(true);
+  };
 
   return (
     <CartProvider>
       {cartOpened && <CartModal onClose={closeCartHandler} />}
       {productModalOpened && <ProductModal item={currentItemInformation} onClose={closeProductModalHandler} />}
       <SideMenuContainer />
-      <Main onAddItemClick={openProductModalHandler}
+      <Main
+        onAddItemClick={openProductModalHandler}
+        onCartOpen={openCartHandler}
         data={testData}
       />
     </CartProvider>

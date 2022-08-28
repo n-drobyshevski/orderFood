@@ -1,5 +1,6 @@
 .cart-item {
     display: flex;
+    align-items: center;
 }
 
 .cart-item:not(:last-child) {
@@ -8,23 +9,28 @@
 
 }
 
+.cart-item:not(:first-child) {
+    padding-top: 1rem;
+}
+
 .info {
     display: flex;
     flex-grow: 1;
     gap: 2.5rem;
-    align-items: flex-end;
+    align-items: center;
 }
 
-.info-main {
+.cart-item .info-main {
     display: flex;
     flex-direction: column;
+    gap: .7rem;
 }
 
-.amount {
+.cart-item .amount {
     margin: 0;
     border: 1px solid #666;
     border-radius: 12px;
-    padding: .2rem .5rem;
+    padding: .3rem .7rem;
     height: min-content;
 }
 
@@ -32,3 +38,8 @@
 button:not(:first-child) {
     margin-left: .5rem;
 } */
+
+.cart-item .button-group {
+    display: flex;
+    gap: .7rem;
+}

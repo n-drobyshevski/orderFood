@@ -8,9 +8,7 @@ const Main = props => {
     return (
         <main className={styles.main}>
 
-            <Header
-            // onCartOpen={openCartHandler} /
-            />
+            <Header onCartOpen={props.onCartOpen} />
             <div className={styles['main-content']}>
                 <Banner />
                 <Categories />

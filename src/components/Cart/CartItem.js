@@ -26,7 +26,7 @@ const CartItem = (props) => {
 
                 </div>
                 <div className={styles.amount}>
-                    <p>{props.amount}</p>
+                    <p>x {props.amount}</p>
                 </div>
             </div>
 
