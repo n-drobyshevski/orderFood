@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import CartModal from "./components/Cart/CartModal";
 import ProductModal from "./components/ProductModal/ProductModal";
-import CartProvider from "./store/CartProvider";
 import SideMenuContainer from "./components/SideMenu/SideMenuContainer";
 import Main from "./components/Main/Main";
+
+import CartProvider from "./store/CartProvider";
+
+import sendRequest from "./infra/http/http-client";
 
 const testData = [
   { id: 'M1', name: 'Meal 1', description: 'some desc', price: 90.00 },
@@ -18,7 +22,6 @@ function App() {
   const [cartOpened, setCartOpened] = useState(false);
   const [productModalOpened, setProductModalOpened] = useState(false);
   const [currentItemInformation, setCurrentItemInformation] = useState({});
-
   const closeProductModalHandler = () => {
     setProductModalOpened(false);
   };
@@ -45,7 +48,7 @@ function App() {
       <Main
         onAddItemClick={openProductModalHandler}
         onCartOpen={openCartHandler}
-        data={testData}
+        onCheckoutClick={openCartHandler}
       />
     </CartProvider>
   );

@@ -29,11 +29,12 @@ const CartItem = (props) => {
                     <p>x {props.amount}</p>
                 </div>
             </div>
-
-            <div className={styles['button-group']}>
-                <Button onClick={addItemHandler}>+</Button>
-                <Button onClick={removeItemHandler}>-</Button>
-            </div>
+            {!props.checkoutActive &&
+                <div className={styles['button-group']}>
+                    <Button onClick={addItemHandler}>+</Button>
+                    <Button onClick={removeItemHandler}>-</Button>
+                </div>
+            }
         </li>
     )
 };

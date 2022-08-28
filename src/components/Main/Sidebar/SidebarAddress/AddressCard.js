@@ -1,11 +1,11 @@
-import styles from './AddressCart.module.css';
+import styles from './AddressCard.module.css';
 
 import Button from '../../../UI/Button/Button';
 import Card from '../../../UI/Card/Card';
 
 import { HiLocationMarker } from 'react-icons/hi';
 
-const AddressCart = () => {
+const AddressCard = () => {
     return (
         <Card>
             <div className={styles['address-card']}>
@@ -31,4 +31,4 @@ const AddressCart = () => {
         </Card>
     )
 };
-export default AddressCart;
+export default AddressCard;

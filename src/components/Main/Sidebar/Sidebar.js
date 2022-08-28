@@ -1,17 +1,17 @@
 import styles from './Sidebar.module.css';
-import AddressCart from './SidebarAddress/AddressCart';
+import AddressCard from './SidebarAddress/AddressCard';
 
 import SidebarCart from './SidebarCart/SidebarCart';
 
 import CartContext from '../../../store/cart-context';
 import { useContext } from 'react';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     const cartCtx = useContext(CartContext);
     return (
         <aside className={styles.sidebar}>
-            <AddressCart />
-            {cartCtx.items.length > 0 && <SidebarCart />}
+            <AddressCard />
+            {cartCtx.items.length > 0 && <SidebarCart onCheckoutClick={props.onCheckoutClick} />}
 
         </aside>
     );

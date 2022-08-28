@@ -7,8 +7,9 @@ import { useContext } from 'react';
 
 const CartList = (props) => {
     const cartCtx = useContext(CartContext);
+    const classes = `${styles['cart-list']} ${props.checkout && styles.checkout}`
     return (
-        <ul className={styles['cart-list']}>
+        <ul className={classes}>
             {cartCtx.items.map((item) => {
                 return (
                     <CartItem
@@ -18,6 +19,7 @@ const CartList = (props) => {
                         desc={item.description}
                         price={item.price}
                         amount={item.amount}
+                        checkoutActive={props.checkout}
                     />
                 );
             })}

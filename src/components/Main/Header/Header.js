@@ -32,7 +32,7 @@ const Header = (props) => {
                 >
                     <HiShoppingCart />
                     Cart
-                    {/* {cartCtx.totalAmount !== 0 && <span className={styles.badge}>{cartCtx.totalAmount}</span>} */}
+                    {cartCtx.totalAmount !== 0 && <span className={styles.badge}>{cartCtx.totalAmount}</span>}
                 </Button>
                 <Button icon='without-text' type='button'><HiOutlineCog /></Button>
                 <Button icon='without-text' type='button'><HiOutlineBell /></Button>

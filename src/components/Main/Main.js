@@ -15,7 +15,7 @@ const Main = props => {
                 <ItemsList onAddItemClick={props.onAddItemClick} items={props.data} />
 
             </div>
-            <Sidebar />
+            <Sidebar onCheckoutClick={props.onCheckoutClick} />
         </main >
     )
 };

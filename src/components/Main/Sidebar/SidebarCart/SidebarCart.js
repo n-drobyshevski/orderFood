@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import CartContext from '../../../../store/cart-context';
 
 
-const SidebarCart = () => {
+const SidebarCart = (props) => {
     const cartCtx = useContext(CartContext);
 
     return (
@@ -35,7 +35,7 @@ const SidebarCart = () => {
                 </div>
             </Card>
 
-            <Button fill={true} >Checkout</Button>
+            <Button fill={true} onClick={props.onCheckoutClick}>Checkout</Button>
         </div>
     )
 };

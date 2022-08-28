@@ -43,3 +43,34 @@
     flex-direction: row-reverse;
     gap: .5rem;
 }
+
+/* checkout additional content styles */
+.cart-modal.checkout main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.checkout .items-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkout .address-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkout .address {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.checkout .address div {
+    display: flex;
+    gap: .7rem
+        /* flex-direction: column/; */
+}
