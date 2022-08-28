@@ -4,28 +4,33 @@ import SidebarCartItem from './SidebarCartItem';
 import Button from '../../../UI/Button/Button';
 import Card from '../../../UI/Card/Card';
 
-const menuItems = [];
+import { useContext } from 'react';
+import CartContext from '../../../../store/cart-context';
+
 
 const SidebarCart = () => {
+    const cartCtx = useContext(CartContext);
+
     return (
         <div className={styles['sidebar-cart']}>
             <Card className={styles['sidebar-cart-content']}>
                 <h4>Cart</h4>
 
                 <div>
-                    {menuItems.map(item => {
-                        <SidebarCartItem
-                            key={item.id}
-                            id={item.id}
-                            name={item.name}
-                            price={item.price}
-                            amount={item.amount}
-                        />
+                    {cartCtx.items.map(item => {
+                        return (
+                            <SidebarCartItem
+                                key={item.id}
+                                id={item.id}
+                                name={item.name}
+                                price={item.price}
+                                amount={item.amount}
+                            />)
                     })}
                 </div>
 
                 <div className={styles.total}>
-
+                    <h4>${cartCtx.totalPrice.toFixed(2)}</h4>
                 </div>
             </Card>
 

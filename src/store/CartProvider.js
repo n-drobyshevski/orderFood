@@ -9,6 +9,12 @@ const defaultCartState = {
 };
 
 const cartReducer = (state, action) => {
+    // item = {
+    //     id: id,
+    //     name: name,
+    //     price: price,
+    //     amount: amount,
+    // }
     switch (action.type) {
         case 'ADD':
             const updatedTotalAmount = state.totalAmount + action.item.amount;

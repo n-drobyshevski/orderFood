@@ -59,6 +59,15 @@
 
 }
 
+.button.fill:hover {
+    background-color: #7839e7;
+
+}
+
+.button.fill:active {
+    background-color: #823cf9;
+}
+
 /*  other button sizes */
 .button.large {
     height: 56px;

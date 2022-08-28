@@ -1,30 +1,29 @@
+import { useState, useEffect, useContext } from 'react';
+
 import styles from './ProductModal.module.css';
 
-import { useState, useEffect } from 'react';
-
 import Modal from '../UI/Modal/Modal';
+import Button from '../UI/Button/Button';
+
+import CartContext from '../../store/cart-context';
 
 import { HiOutlinePlus, HiOutlineMinus, HiOutlineX } from 'react-icons/hi';
-import Button from '../UI/Button/Button';
-const ProductModal = (props) => {
-    let [productAmount, setProductAmount] = useState(1);
-    let [totalPrice, setTotalPrice] = useState(props.item.price);
 
-    const closeHandler = () => {
-        props.onClose();
-    };
+const ProductModal = (props) => {
+    const [productAmount, setProductAmount] = useState(1);
+    const [totalPrice, setTotalPrice] = useState(props.item.price);
+
+    const cartCtx = useContext(CartContext);
+
     useEffect(() => {
-        console.log('effecct');
         setTotalPrice(productAmount * props.item.price);
-    }, [productAmount, totalPrice]);
+    }, [productAmount, totalPrice, props.item.price]);
 
     const increaseItemsQuantity = () => {
-        // productAmount += 1;
         setProductAmount((prevAmount) => { return (prevAmount + 1) })
     };
 
     const decreaseItemsQuantity = () => {
-        // productAmount -= 1;
         setProductAmount((prevAmount) => {
             if (prevAmount > 1) {
                 return (prevAmount - 1)
@@ -34,13 +33,19 @@ const ProductModal = (props) => {
             }
         })
     };
+
+    const addToCartHandler = () => {
+        cartCtx.addItem({ ...props.item, amount: productAmount });
+        props.onClose();
+    };
+
     return (
         <Modal
             className={styles['product-modal']}
-            onClose={closeHandler}>
+            onClose={props.onClose}>
             <Button
                 className={styles['close-button']}
-                onClick={closeHandler}
+                onClick={props.onClose}
                 icon="without-text"
                 noBorder={true}>
                 <HiOutlineX />
@@ -78,7 +83,7 @@ const ProductModal = (props) => {
                         <h4>Total price:</h4>
                         <h4>${totalPrice}</h4>
                     </div>
-                    <Button fill={true}>Add to cart</Button>
+                    <Button onClick={addToCartHandler} fill={true}>Add to cart</Button>
                 </div>
             </div>
         </Modal >

@@ -34,9 +34,9 @@ function App() {
     setCartOpened(false);
   };
 
-  const openCartHandler = () => {
-    setCartOpened(true);
-  };
+  // const openCartHandler = () => {
+  //   setCartOpened(true);
+  // };
 
   return (
     <CartProvider>
