@@ -30,6 +30,9 @@ const ItemsList = (props) => {
             setAvailableItems(loadedItems);
         }
         fetchItems();
+
+
+        // sendRequest('items', getItems);
     }, []);
 
 

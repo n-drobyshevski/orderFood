@@ -1,8 +1,7 @@
 .input {
     display: flex;
-    gap: .7rem;
-    align-items: center;
-
+    gap: .5rem;
+    flex-direction: column;
 }
 
 .input input {

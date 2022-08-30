@@ -10,7 +10,7 @@ const Sidebar = (props) => {
     const cartCtx = useContext(CartContext);
     return (
         <aside className={styles.sidebar}>
-            <AddressCard />
+            <AddressCard onChangeAddress={props.onChangeAddress} />
             {cartCtx.items.length > 0 && <SidebarCart onCheckoutClick={props.onCheckoutClick} />}
 
         </aside>

@@ -6,8 +6,9 @@ import SideMenuContainer from "./components/SideMenu/SideMenuContainer";
 import Main from "./components/Main/Main";
 
 import CartProvider from "./store/CartProvider";
-
+import UserProvider from "./store/UserProvider";
 import sendRequest from "./infra/http/http-client";
+import AddressModal from "./components/AddressModal/AddressModal";
 
 const testData = [
   { id: 'M1', name: 'Meal 1', description: 'some desc', price: 90.00 },
@@ -20,8 +21,10 @@ const testData = [
 
 function App() {
   const [cartOpened, setCartOpened] = useState(false);
+  const [addressModalOpened, setAddressModalOpened] = useState(false);
   const [productModalOpened, setProductModalOpened] = useState(false);
   const [currentItemInformation, setCurrentItemInformation] = useState({});
+
   const closeProductModalHandler = () => {
     setProductModalOpened(false);
   };
@@ -40,17 +43,29 @@ function App() {
     setCartOpened(true);
   };
 
+  const openAddressModalHandler = () => {
+    setAddressModalOpened(true);
+  };
+
+  const closeAddressModalHandler = () => {
+    setAddressModalOpened(false);
+  };
+
   return (
-    <CartProvider>
-      {cartOpened && <CartModal onClose={closeCartHandler} />}
-      {productModalOpened && <ProductModal item={currentItemInformation} onClose={closeProductModalHandler} />}
-      <SideMenuContainer />
-      <Main
-        onAddItemClick={openProductModalHandler}
-        onCartOpen={openCartHandler}
-        onCheckoutClick={openCartHandler}
-      />
-    </CartProvider>
+    <UserProvider >
+      <CartProvider>
+        {cartOpened && <CartModal onAddressChange={openAddressModalHandler} onClose={closeCartHandler} />}
+        {addressModalOpened && <AddressModal onClose={closeAddressModalHandler} />}
+        {productModalOpened && <ProductModal item={currentItemInformation} onClose={closeProductModalHandler} />}
+        <SideMenuContainer />
+        <Main
+          onAddItemClick={openProductModalHandler}
+          onCartOpen={openCartHandler}
+          onCheckoutClick={openCartHandler}
+          onChangeAddress={openAddressModalHandler}
+        />
+      </CartProvider>
+    </UserProvider>
   );
 }
 

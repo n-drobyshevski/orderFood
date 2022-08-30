@@ -4,8 +4,11 @@ import Button from '../../../UI/Button/Button';
 import Card from '../../../UI/Card/Card';
 
 import { HiLocationMarker } from 'react-icons/hi';
+import { useContext } from 'react';
+import UserContext from '../../../../store/user-context';
 
-const AddressCard = () => {
+const AddressCard = props => {
+    const userCtx = useContext(UserContext);
     return (
         <Card>
             <div className={styles['address-card']}>
@@ -15,9 +18,9 @@ const AddressCard = () => {
                 <div className={styles['address']}>
                     <div>
                         <HiLocationMarker />
-                        <p>Street name, 23</p>
+                        <p>{userCtx.address.street}, {userCtx.address.houseNumber}</p>
                     </div>
-                    <Button size='small' fill={true}>Change</Button>
+                    <Button onClick={props.onChangeAddress} size='small' fill={true}>Change</Button>
                 </div>
 
                 <p className={styles.description}>Lorem ipsum dolor sit amet, consectitur</p>

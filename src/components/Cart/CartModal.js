@@ -3,13 +3,17 @@ import styles from './CartModal.module.css';
 import Button from '../UI/Button/Button';
 import Modal from '../UI/Modal/Modal';
 import CartList from './CartList';
+
 import { useContext, useState } from 'react';
 import CartContext from '../../store/cart-context';
+import UserContext from '../../store/user-context';
 
 import { HiLocationMarker } from 'react-icons/hi';
 
 const CartModal = (props) => {
     const cartCtx = useContext(CartContext);
+    const userCtx = useContext(UserContext);
+
     const [checkout, setCheckout] = useState(false);
 
     const classes = `${styles['cart-modal']} ${checkout && styles.checkout}`
@@ -70,9 +74,11 @@ const CartModal = (props) => {
                         <div className={styles['address']}>
                             <div>
                                 <HiLocationMarker />
-                                <p>Street name, 23</p>
+                                <p>{userCtx.address.street} {userCtx.address.houseNumber}</p>
                             </div>
-                            <Button size='small' fill={true}>Change</Button>
+                            <Button onClick={props.onAddressChange}
+                                size='small'
+                                fill={true}>Change</Button>
                         </div>
                     </div>
                 </main>

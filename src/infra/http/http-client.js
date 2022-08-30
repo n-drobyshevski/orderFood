@@ -1,30 +1,19 @@
 // get items 
 // import { useState } from 'react';
 
-const databaseUrl = 'https://react-test-app-f0750-default-rtdb.europe-west1.firebasedatabase.app/items.json';
+const composeUrl = (name) => {
+    return `https://react-test-app-f0750-default-rtdb.europe-west1.firebasedatabase.app/${name}.json`;
 
-const sendRequest = async () => {
-    try {
-        const response = await fetch(databaseUrl);
-        if (!response.ok) { throw new Error('something went wrong') }
+};
+const sendRequest = (urlName, applyFn) => {
+
+    const fetchData = async () => {
+        const response = await fetch(composeUrl(urlName));
         const data = await response.json();
+        applyFn(data)
+    };
 
-        const loadedItems = [];
-        for (const key in data) {
-            loadedItems.push({
-                id: key,
-                name: data[key].name,
-                price: data[key].price,
-                description: data[key].description
-            });
-        }
-        // console.log(loadedItems)
-        return loadedItems
-    }
-    catch (error) {
-        console.log(error.message)
-    }
-    // post items
+    fetchData();
 };
 
 export default sendRequest;
