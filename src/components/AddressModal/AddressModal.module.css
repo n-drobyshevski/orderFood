@@ -10,6 +10,13 @@
 }
 
 .address-modal .form-actions {
+    margin-top: 1rem;
     display: flex;
     gap: .7rem;
+}
+
+.invalid input,
+.invalid p {
+    color: red;
+    border-color: red;
 }
