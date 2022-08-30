@@ -21,6 +21,8 @@ const CartModal = (props) => {
     const checkoutSubmitHandler = () => {
         const randomId = (Math.random() * 100).toFixed();
         userCtx.updateUserOrders(randomId, cartCtx.items, userCtx.address);
+        cartCtx.clearCart();
+        props.onClose();
     };
     if (!checkout) {
         return (

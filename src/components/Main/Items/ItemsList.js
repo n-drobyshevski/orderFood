@@ -2,7 +2,6 @@ import styles from './ItemsList.module.css';
 import Item from './Item';
 import Section from '../Section/Section';
 
-import sendRequest from '../../../infra/http/http-client';
 
 import { useState, useEffect } from 'react';
 
