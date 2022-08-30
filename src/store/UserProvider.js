@@ -10,9 +10,16 @@ const defaultUserState = {
         street: '',
         houseNumber: 0,
     },
+    orders: {
+        id: {
+            items: [],
+            address: {},
+            time: ''
+        }
+    },
 };
 
-const updateAddressData = (data) => {
+const updateUserData = (data) => {
     fetch(databaseUrl, {
         method: "PUT",
         headers: {
@@ -22,48 +29,44 @@ const updateAddressData = (data) => {
     });
 };
 
-const addressReducer = (state, action) => {
+const userDataReducer = (state, action) => {
     switch (action.type) {
-        case 'SET':
+        case 'SET': {
             return action.data;
-        case 'UPDATE':
+        }
+        case 'UPDATE_ADDRESS': {
             const updatedState = { ...state };
-            for (const key in updatedState) {
-                if (key === action.key) {
-                    updatedState[key] = action.value
-                }
-            };
-            updateAddressData(updatedState);
+            updatedState.address = action.value;
+            updateUserData(updatedState);
             return updatedState;
+        }
+        case 'UPDATE_ORDERS': {
+            const orderDate = new Date();
+            const orderTime = orderDate.toLocaleTimeString();
+            const updatedState = { ...state };
+            const newOrder = { address: action.address, items: action.items, time: orderTime }
+            updatedState.orders = { ...updatedState.orders, ...{ [action.id]: newOrder } }
+            updateUserData(updatedState);
+            return updatedState;
+        }
+        default: {
+            return defaultUserState;
+        }
     };
 
-    return defaultUserState;
 };
 
 const UserProvider = props => {
 
-    const [userState, dispatchUserAction] = useReducer(addressReducer, defaultUserState);
+    const [userState, dispatchUserAction] = useReducer(userDataReducer, defaultUserState);
 
-    const updateUserHandler = (key, newValue) => {
-        console.log('update user context')
-        dispatchUserAction({ type: 'UPDATE', key: key, value: newValue });
+    const updateUserAddress = (newValue) => {
+        dispatchUserAction({ type: 'UPDATE_ADDRESS', value: newValue });
     };
 
-    useEffect(() => {
-        // const fetchUserData = () => {
-        //     fetch(databaseUrl, {
-        //         method: "POST",
-        //         headers: {
-        //             'content-type': 'application.json'
-        //         },
-        //         body: JSON.stringify(userState),
-        //     });
-        //     // const data = await response.json();
-        //     // console.log(data)
-        //     // dispatchUserAction({ type: 'SET', data: data })
-        // };
-        // fetchUserData();
-    }, [userState]);
+    const updateUserOrders = (id, items, address) => {
+        dispatchUserAction({ type: 'UPDATE_ORDERS', id: id, items: items, address: address });
+    };
 
     useEffect(() => {
         const getUserData = async () => {
@@ -71,10 +74,8 @@ const UserProvider = props => {
             const data = await response.json();
             const newData = {};
             for (const key in data) {
-                console.log(data[key]);
                 newData[key] = data[key];
             }
-            console.log(newData);
             dispatchUserAction({ type: "SET", data: newData });
         };
         getUserData();
@@ -87,9 +88,18 @@ const UserProvider = props => {
             street: userState.address.street,
             houseNumber: userState.address.houseNumber,
         },
-        updateUser: updateUserHandler,
+        orders: {
+            id: {
+                items: [],
+                address: {},
+                time: '',
+            }
+        },
+        updateUserAddress: updateUserAddress,
+        updateUserOrders: updateUserOrders,
 
     };
+
     return (
         <UserContext.Provider value={userContext}>
             {props.children}

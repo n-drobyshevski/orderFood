@@ -55,14 +55,14 @@ const AddressModal = props => {
 
         if (!formIsValid) { return };
 
-        const updateAddress = {
+        const updatedAddress = {
             city: cityInputRef.current.value,
             street: streetInputRef.current.value,
             postalCode: postalCodeInputRef.current.value,
             houseNumber: numberInputRef.current.value,
         };
 
-        userCtx.updateUser('address', updateAddress);
+        userCtx.updateUserAddress(updatedAddress);
     };
 
     return (

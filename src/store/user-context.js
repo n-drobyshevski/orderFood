@@ -7,7 +7,16 @@ const UserContext = React.createContext({
         street: '',
         houseNumber: 0,
     },
-    updateAddress: (key, newValue) => { },
+    orders: {
+        id:
+        {
+            items: [],
+            address: {},
+            time: '',
+        }
+    },
+    updateUserAddress: (newValue) => { },
+    updateUserOrders: (id, items, address) => { },
 });
 
 export default UserContext;

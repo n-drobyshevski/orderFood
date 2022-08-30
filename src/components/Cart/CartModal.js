@@ -18,6 +18,10 @@ const CartModal = (props) => {
 
     const classes = `${styles['cart-modal']} ${checkout && styles.checkout}`
 
+    const checkoutSubmitHandler = () => {
+        const randomId = (Math.random() * 100).toFixed();
+        userCtx.updateUserOrders(randomId, cartCtx.items, userCtx.address);
+    };
     if (!checkout) {
         return (
             <Modal className={classes} onClose={props.onClose} title='Cart'>
@@ -89,7 +93,7 @@ const CartModal = (props) => {
                         <h4>$ {(cartCtx.totalPrice).toFixed(2)}</h4>
                     </div>
                     <div className={styles['action-bar']}>
-                        <Button fill={true} >Submit</Button>
+                        <Button fill={true} onClick={checkoutSubmitHandler} >Submit</Button>
                         <Button onClick={() => { setCheckout(false) }}>Back</Button>
                     </div>
 
